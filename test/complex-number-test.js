@@ -1,7 +1,7 @@
 const {deepStrictEqual} = require('assert');
 const {describe, it} = require("node:test");
 
-const {makeComplexNumber, addComplexNumbers} = require("../src/complex-number.js");
+const {makeComplexNumber, addComplexNumbers, multiplyComplexNumbers} = require("../src/complex-number.js");
 
 const firstNumber = makeComplexNumber(2, 3);
 const secondNumber = makeComplexNumber(5, 4);
@@ -21,5 +21,11 @@ describe("getImaginaryPart", function() {
 describe("addComplexNumbers", function() {
   it("should give the sum of two complex number", function() {
     deepStrictEqual(addComplexNumbers(firstNumber, secondNumber), {real: 7, imaginary: 7});
+  });
+});
+
+describe("multiplyComplexNumbers", function() {
+  it("should give the product of two complex number", function() {
+    deepStrictEqual(multiplyComplexNumbers(firstNumber, secondNumber), {real: -2, imaginary: 23});
   });
 });
