@@ -10,6 +10,15 @@ const makeComplexNumber = function(real, imaginary) {
   return {getRealPart, getImaginaryPart};
 };
 
-const complexNumber = makeComplexNumber(1, 3);
+const addComplexNumbers = function(addend, augend) {
+  let real = 0;
+  let imaginary = 0;
 
-exports.complexNumber = complexNumber;
+  real = addend.getRealPart() + augend.getRealPart();
+  imaginary = addend.getImaginaryPart() + augend.getImaginaryPart();
+
+  return {real, imaginary};
+};
+
+exports.makeComplexNumber = makeComplexNumber;
+exports.addComplexNumbers = addComplexNumbers;
