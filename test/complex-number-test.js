@@ -1,34 +1,36 @@
-const {deepStrictEqual} = require('assert');
+const {deepStrictEqual} = require("assert");
 const {describe, it} = require("node:test");
 
-const {makeComplexNumber, addComplexNumbers, multiplyComplexNumbers} = require("../src/complex-number.js");
-
-const firstNumber = makeComplexNumber(2, -3);
-const secondNumber = makeComplexNumber(5, 4);
-const complexNumber = makeComplexNumber(0, -30);
+const {complexNumber} = require("../src/complex-number.js");
 
 describe("getRealPart", function() {
   it("should give the real part of the complex number", function() {
-    deepStrictEqual(firstNumber.getRealPart(), 2);
+    const a = complexNumber(2, 3)
+    deepStrictEqual(a.realPart(), 2);
   });
 });
 
 describe("getImaginaryPart", function() {
   it("should give the imaginary part of the complex number", function() {
-    deepStrictEqual(firstNumber.getImaginaryPart(), -3);
+    const a = complexNumber(2, -3);
+    deepStrictEqual(a.imaginaryPart(), -3);
   });
 });
 
-describe("addComplexNumbers", function() {
+describe("add", function() {
   it("should give the sum of two complex number", function() {
-    const sum = addComplexNumbers(firstNumber, secondNumber);
+    const a = complexNumber(2, -3);
+    const b = complexNumber(5, 4);
+    const sum = a.add(b);
     deepStrictEqual(sum.toString(), '7 + 1i');
   });
 });
 
-describe("multiplyComplexNumbers", function() {
+describe("multiply", function() {
   it("should give the product of two complex number", function() {
-    const product = multiplyComplexNumbers(firstNumber, secondNumber);
+    const a = complexNumber(2, -3);
+    const b = complexNumber(5, 4);
+    const product = a.multiply(b);
     deepStrictEqual(product.toString(), '22 - 7i');
   });
 });
