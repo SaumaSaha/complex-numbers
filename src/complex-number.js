@@ -8,7 +8,24 @@ const makeComplexNumber = function(real, imaginary) {
     return number.imaginary;
   };
 
-  return {getRealPart, getImaginaryPart};
+  const display = function() {
+    if(number.imaginary === 0) {
+      return `${real}`;
+    }
+
+    if(number.real === 0) {
+      return `${imaginary}i`;
+    }
+
+    if(imaginary < 0) {
+      return `${real} - ${Math.abs(imaginary)}i`; 
+    }
+
+    return `${real} + ${imaginary}i`;
+
+  };
+
+  return {getRealPart, getImaginaryPart, display};
 };
 
 const addComplexNumbers = function(addend, augend) {
