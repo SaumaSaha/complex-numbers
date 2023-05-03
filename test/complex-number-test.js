@@ -22,15 +22,14 @@ describe("getImaginaryPart", function() {
 describe("addComplexNumbers", function() {
   it("should give the sum of two complex number", function() {
     const sum = addComplexNumbers(firstNumber, secondNumber);
-    deepStrictEqual(sum.display(), '7 + 1i');
+    deepStrictEqual(sum.toString(), '7 + 1i');
   });
 });
 
 describe("multiplyComplexNumbers", function() {
   it("should give the product of two complex number", function() {
     const product = multiplyComplexNumbers(firstNumber, secondNumber);
-    deepStrictEqual(product.display(), '22 - 7i');
+    deepStrictEqual(product.toString(), '22 - 7i');
   });
 });
 
-console.log(complexNumber.display());
