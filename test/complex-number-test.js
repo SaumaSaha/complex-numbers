@@ -20,12 +20,14 @@ describe("getImaginaryPart", function() {
 
 describe("addComplexNumbers", function() {
   it("should give the sum of two complex number", function() {
-    deepStrictEqual(addComplexNumbers(firstNumber, secondNumber), {real: 7, imaginary: 7});
+    const sum = addComplexNumbers(firstNumber, secondNumber);
+    deepStrictEqual([sum.getRealPart(), sum.getImaginaryPart()], [7, 7]);
   });
 });
 
 describe("multiplyComplexNumbers", function() {
   it("should give the product of two complex number", function() {
-    deepStrictEqual(multiplyComplexNumbers(firstNumber, secondNumber), {real: -2, imaginary: 23});
+    const product = multiplyComplexNumbers(firstNumber, secondNumber);
+    deepStrictEqual([product.getRealPart(), product.getImaginaryPart()], [-2, 23]);
   });
 });

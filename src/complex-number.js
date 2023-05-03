@@ -1,10 +1,11 @@
 const makeComplexNumber = function(real, imaginary) {
+  const number = {real, imaginary};
   const getRealPart = function() {
-    return real;
+    return number.real;
   };
 
   const getImaginaryPart = function() {
-    return imaginary;
+    return number.imaginary;
   };
 
   return {getRealPart, getImaginaryPart};
@@ -17,7 +18,9 @@ const addComplexNumbers = function(addend, augend) {
   real = addend.getRealPart() + augend.getRealPart();
   imaginary = addend.getImaginaryPart() + augend.getImaginaryPart();
 
-  return {real, imaginary};
+  const sum = makeComplexNumber(real, imaginary);
+
+  return sum;
 };
 
 const multiplyComplexNumbers = function(multiplier, multiplicand) {
@@ -32,7 +35,8 @@ const multiplyComplexNumbers = function(multiplier, multiplicand) {
   real =  multiplicandRealPart * multiplierRealPart - multiplicandImaginaryPart * multiplierImaginaryPart;
   imaginary = multiplicandRealPart * multiplierImaginaryPart + multiplicandImaginaryPart * multiplierRealPart;
 
-  return {real, imaginary};
+  const product = makeComplexNumber(real, imaginary);
+  return product;
 };
 
 exports.makeComplexNumber = makeComplexNumber;
