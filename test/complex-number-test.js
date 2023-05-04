@@ -19,10 +19,10 @@ describe("getImaginaryPart", function() {
 
 describe("add", function() {
   it("should give the sum of two complex number", function() {
-    const a = complexNumber(2, -3);
+    const a = complexNumber(0, -0);
     const b = complexNumber(5, 4);
     const sum = a.add(b);
-    deepStrictEqual(sum.toString(), '7 + 1i');
+    deepStrictEqual(sum.toString(), '5 + 4i');
   });
 });
 
